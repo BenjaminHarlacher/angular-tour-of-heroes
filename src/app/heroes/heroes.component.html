@@ -1,0 +1,35 @@
+<h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input 
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>-->
+</div>
+
+
+<!--<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{heroname.id}}">
+      <span class="badge">{{heroname.id}}</span> {{heroname.name}}
+    </a>-->
+  
+
+     <mat-card *ngFor="let heroname of heronames">
+      <mat-card-content  > 
+        
+          <span class="heroCard">ID: {{heroname.id}}</span><br>
+          <span class="heroCard">Heroname {{heroname.name}}</span><br>
+          <button mat-button class="heroCard"><a routerLink="/detail/{{heroname.id}}">Detail</a></button>
+          <br>------------------------------------<br>
+        
+      </mat-card-content>
+     </mat-card>
+    <!--<button class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+    
+  </li>
+</ul>-->
