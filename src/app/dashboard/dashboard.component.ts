@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     //this.getHeroes();
     this.dataService.sendGetRequest().subscribe((data: any[])=>{
       console.log(data);
-      this.heronames = data.slice(1,5);
+      this.heronames = data.slice(0,4);
     })  
   }
 

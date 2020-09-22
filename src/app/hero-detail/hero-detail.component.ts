@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { DataService } from '../data.service';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
@@ -13,8 +14,7 @@ import { DataService } from '../data.service';
   styleUrls: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit{
-  //hero: Hero;
-  heronames = [];
+
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -22,12 +22,18 @@ export class HeroDetailComponent implements OnInit{
     private dataService: DataService
   ) {}
 
+  @Input()
+  id: number;
+  hero: Hero;
+
+ 
+
   ngOnInit(){
     //this.getHero();
-    this.dataService.sendGetRequest().subscribe((data: any[])=>{
-      console.log(data);
-      this.heronames = data;
-    })
+    this.dataService.getHero(this.id).subscribe((hero)=>{
+      console.log(hero);
+      this.hero = hero;
+    }, error => console.log(error))
   }
 
   

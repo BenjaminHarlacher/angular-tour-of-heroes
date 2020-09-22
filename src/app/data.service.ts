@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
-import {  throwError } from 'rxjs';
+import {  Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Hero } from './hero';
 
 
 
@@ -30,6 +31,10 @@ export class DataService {
 
   public sendGetRequest(){
     return this.httpClient.get(this.REST_API_SERVER).pipe(retry(3), catchError(this.handleError));
+  }
+
+  public getHero(id: number) : Observable<Hero>{
+    return this.httpClient.get<Hero>(this.REST_API_SERVER + 'Hero/' + id);
   }
 
   /*public submitForm(){

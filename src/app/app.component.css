@@ -1,12 +1,21 @@
 /* AppComponent's private CSS styles */
 h1 {
-    font-size: 1.2em;
+    font-size: 20px;
     margin-bottom: 0;
+    margin-left: 25%;
+    margin-right: 25%;
   }
   h2 {
     font-size: 2em;
     margin-top: 0;
     padding-top: 0;
+  }
+  nav
+  {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    margin-bottom: 5%;
   }
   nav a {
     padding: 5px 10px;
@@ -26,3 +35,8 @@ h1 {
   nav a.active {
     color: #039be5;
   }
+
+body
+{
+  background-color: lightblue;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatCardModule} from '@angular/material/card';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { DataService } from '../data.service';
