@@ -9,20 +9,21 @@ import { DataService } from '../data.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  //heroes: Hero[] = [];
-  heronames = [];
-  constructor(private dataService: DataService) { }
+  heroes: Hero[] = [];
+  //heronames = [];
+  //constructor(private dataService: DataService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    //this.getHeroes();
-    this.dataService.sendGetRequest().subscribe((data: any[])=>{
+    this.getHeroes();
+    /*this.dataService.sendGetRequest().subscribe((data: any[])=>{
       console.log(data);
       this.heronames = data.slice(0,4);
-    })  
+    })  */
   }
 
-  /*getHeroes(): void {
-    this.dataService.getHeroes()
+  getHeroes(): void {
+    this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
-  }*/
+  }
 }

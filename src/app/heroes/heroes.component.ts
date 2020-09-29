@@ -10,22 +10,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  //heroes: Hero[];
-  heronames = [];
-  constructor(private dataService: DataService) { }
+  heroes: Hero[];
+  //heronames = [];
+  
+  //constructor(private dataService: DataService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    //this.getHeroes();
-    this.dataService.sendGetRequest().subscribe((data: any[])=>{
+    this.getHeroes();
+    /*this.dataService.sendGetRequest().subscribe((data: any[])=>{
       console.log(data);
       this.heronames = data;
-    })  
+    })  */
   }
 
-  /*addHero()
-  {
-
-  }
+  
   getHeroes(): void {
     this.heroService.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
@@ -43,6 +42,6 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
-  }*/
+  }
 
 }

@@ -30,10 +30,18 @@
   #search-box {
     width: 200px;
     height: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
   }
   
   
   ul.search-result {
     margin-top: 0;
     padding-left: 0;
+  }
+
+  h4{
+    margin-top:-70px;
+    margin-left: 25%;
+    margin-right: 25%;
   }

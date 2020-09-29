@@ -37,6 +37,8 @@ export class DataService {
     return this.httpClient.get<Hero>(this.REST_API_SERVER + 'Hero/' + id);
   }
 
+  
+
   /*public submitForm(){
   var formData: any = new FormData();
   formData.append("name", this.form.get('name').value);
