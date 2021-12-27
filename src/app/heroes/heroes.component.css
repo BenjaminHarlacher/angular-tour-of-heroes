@@ -64,7 +64,7 @@ button:hover {
 
 button.delete {
   position: relative;
-  left: 750px;
+  left: 580px;
   top: -15px;
   background-color: gray !important;
   color: white;
